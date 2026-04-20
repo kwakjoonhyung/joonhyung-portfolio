@@ -92,7 +92,7 @@ export default function Hero() {
                 View CV
               </a>
               <a
-                href={`mailto:${profile.email}`}
+                href="#contact"
                 className="inline-flex items-center gap-2 border border-line hover:border-accent px-6 py-3 rounded-full text-sm tracking-wide transition-colors"
               >
                 <Mail size={16} />
