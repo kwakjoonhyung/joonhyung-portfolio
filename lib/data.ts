@@ -39,7 +39,7 @@ export const about = {
       icon: "📊",
       title: "Rigorous Evaluation",
       description:
-        "LLM-as-a-Judge frameworks with bootstrapped ATE and 95% CIs (10k resamples) — point estimates aren't science.",
+        "LLM-as-a-Judge frameworks and bootstrapped ATE with 95% CIs (10k resamples)",
     },
     {
       icon: "🔬",
@@ -69,8 +69,8 @@ export const timeline = [
     items: [
       {
         period: "Sep. 2024 – Oct. 2024",
-        title: "Research Intern",
-        org: "Biomedical Signal Lab, SNU Bundang Hospital",
+        title: "Program Trainee",
+        org: "Biomedical AI Training Program, SNU Bundang Hospital",
         description:
           "Built ECG/ABP preprocessing pipeline on 1,500 patient records. Developed multi-input Inception-CNN for stroke risk prediction (ROC-AUC 0.81).",
         tag: "Clinical AI",
@@ -226,7 +226,7 @@ export const projects = [
     id: "ecg-stroke",
     year: "Sep. 2024 – Oct. 2024",
     title: "ECG/ABP Waveform Pipeline for Stroke Risk Prediction",
-    subtitle: "Research Internship — Biomedical Signal Lab, SNU Bundang Hospital",
+    subtitle: "Program Trainee — Biomedical AI Training Program, SNU Bundang Hospital",
     tags: ["PyTorch", "Biomedical Signals", "QLoRA", "Phi-2"],
     highlight: "ROC-AUC 0.81 · 4-bit QLoRA clinical QA demo",
     star: {
