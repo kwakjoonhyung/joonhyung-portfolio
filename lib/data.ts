@@ -15,13 +15,6 @@ export const profile = {
   graduation: "Aug. 2026 (Expected)",
 };
 
-export const stats = [
-  { value: "230K+", label: "SNS posts processed" },
-  { value: "6×", label: "LLM inference throughput" },
-  { value: "0.78", label: "macro-F1 (PsySym)" },
-  { value: "8K+", label: "user corpus scaled" },
-];
-
 export const about = {
   paragraphs: [
     "M.S. candidate in Artificial Intelligence at Sungkyunkwan University, working under Prof. JinYeong Bak at the Human-Language Intelligence Lab. My research lies at the intersection of **LLM inference optimization** and **causal reasoning systems for mental-health applications**.",

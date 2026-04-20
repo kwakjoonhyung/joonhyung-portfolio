@@ -43,11 +43,11 @@ export default function Contact() {
               <div className="font-mono text-xs tracking-widest uppercase text-muted mb-4">
                 / Primary contact
               </div>
-              <div className="font-display text-3xl md:text-5xl lg:text-6xl tracking-tight leading-tight group-hover:text-accent transition-colors break-all">
+              <div className="font-display text-xl md:text-2xl lg:text-3xl tracking-tight leading-tight group-hover:text-accent transition-colors whitespace-nowrap">
                 {profile.email}
                 <ArrowUpRight
-                  size={32}
-                  className="inline-block ml-2 -mt-2 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all"
+                  size={22}
+                  className="inline-block ml-2 -mt-1 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all"
                 />
               </div>
             </a>

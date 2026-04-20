@@ -45,7 +45,7 @@ export default function About() {
             ))}
           </div>
 
-          {/* Meta quote / pull */}
+          {/* Pull quote */}
           <div className="md:col-span-5">
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -55,11 +55,11 @@ export default function About() {
               className="sticky top-32 border-l-2 border-accent pl-6"
             >
               <div className="font-display italic text-xl md:text-2xl text-ink/90 leading-relaxed">
-                &ldquo;Research prototypes are the starting line, not the
-                finish.&rdquo;
+                &ldquo;You can&rsquo;t always win, but you can always
+                learn.&rdquo;
               </div>
               <div className="mt-6 font-mono text-xs tracking-widest uppercase text-muted">
-                — personal principle
+                — Dennis Hong
               </div>
             </motion.div>
           </div>

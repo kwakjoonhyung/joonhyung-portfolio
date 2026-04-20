@@ -1,6 +1,6 @@
 "use client";
 
-import { profile, stats } from "@/lib/data";
+import { profile } from "@/lib/data";
 import { motion } from "framer-motion";
 import { ArrowRight, Github, Mail } from "lucide-react";
 
@@ -153,24 +153,6 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Stats row */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-20 md:mt-24 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 border-t border-line pt-10"
-        >
-          {stats.map((stat, i) => (
-            <div key={i} className="flex flex-col">
-              <div className="font-display text-3xl md:text-5xl text-accent tracking-tight">
-                {stat.value}
-              </div>
-              <div className="mt-2 text-xs font-mono tracking-wider text-muted uppercase">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </motion.div>
       </div>
     </section>
   );
