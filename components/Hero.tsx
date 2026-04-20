@@ -3,7 +3,7 @@
 import { profile } from "@/lib/data";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, FileText, Github, Linkedin, Mail } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -81,6 +81,15 @@ export default function Hero() {
                   size={16}
                   className="group-hover:translate-x-1 transition-transform"
                 />
+              </a>
+              <a
+                href="/cv/JoonhyungKwak_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 border border-line hover:border-accent px-6 py-3 rounded-full text-sm tracking-wide transition-colors"
+              >
+                <FileText size={16} />
+                View CV
               </a>
               <a
                 href={`mailto:${profile.email}`}

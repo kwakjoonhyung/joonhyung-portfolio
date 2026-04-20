@@ -68,6 +68,14 @@ export default function Navigation() {
               {item.label}
             </a>
           ))}
+          <a
+            href="/cv/JoonhyungKwak_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-3 px-4 py-1.5 text-sm tracking-wide rounded-full border border-accent text-accent hover:bg-accent hover:text-bg transition-colors"
+          >
+            CV
+          </a>
         </nav>
 
         <button
@@ -100,6 +108,15 @@ export default function Navigation() {
                 {item.label}
               </a>
             ))}
+            <a
+              href="/cv/JoonhyungKwak_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+              className="py-3 text-sm tracking-wide text-accent"
+            >
+              CV ↗
+            </a>
           </nav>
         </div>
       )}
