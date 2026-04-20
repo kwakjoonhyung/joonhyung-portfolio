@@ -390,7 +390,7 @@ export const teaching = [
   {
     role: "Teaching Assistant",
     course: "National Defense AI Education Program",
-    institution: "—",
+    institution: "SKKU",
     term: "Summer 2024",
   },
   {
