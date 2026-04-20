@@ -3,7 +3,7 @@
 import { profile } from "@/lib/data";
 import { motion } from "framer-motion";
 import SectionHeader from "./SectionHeader";
-import { Mail, Github, MapPin, Phone, ArrowUpRight } from "lucide-react";
+import { Mail, Github, Linkedin, MapPin, Phone, ArrowUpRight } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -84,6 +84,13 @@ export default function Contact() {
                 label="GitHub"
                 value="@kwakjoonhyung"
                 href={profile.github}
+                external
+              />
+              <ContactRow
+                icon={<Linkedin size={16} />}
+                label="LinkedIn"
+                value="joonhyung-kwak"
+                href={profile.linkedin}
                 external
               />
               <ContactRow

@@ -2,7 +2,8 @@
 
 import { profile } from "@/lib/data";
 import { motion } from "framer-motion";
-import { ArrowRight, Github, Mail } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -97,6 +98,15 @@ export default function Hero() {
                 <Github size={16} />
                 GitHub
               </a>
+              <a
+                href={profile.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 border border-line hover:border-accent px-6 py-3 rounded-full text-sm tracking-wide transition-colors"
+              >
+                <Linkedin size={16} />
+                LinkedIn
+              </a>
             </motion.div>
           </div>
 
@@ -108,23 +118,15 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="gradient-border p-8 md:p-10"
             >
-              {/* TODO: Profile photo goes here */}
-              <div className="aspect-[4/5] bg-bg border border-line rounded-lg mb-6 relative overflow-hidden flex items-center justify-center">
-                {/*
-                  📸 PHOTO NEEDED: profile.jpg
-                  - Professional headshot, 4:5 portrait ratio
-                  - Place in: /public/images/profile.jpg
-                  - Will replace the placeholder below
-                */}
-                <div className="text-center p-6">
-                  <div className="text-6xl mb-2 opacity-20">◆</div>
-                  <div className="font-mono text-xs text-muted tracking-wider">
-                    [ PROFILE PHOTO ]
-                  </div>
-                  <div className="font-mono text-[10px] text-muted/60 mt-2">
-                    /public/images/profile.jpg
-                  </div>
-                </div>
+              <div className="aspect-[4/5] border border-line rounded-lg mb-6 relative overflow-hidden">
+                <Image
+                  src="/images/profile.jpg"
+                  alt="Joonhyung Kwak"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 420px"
+                  className="object-cover"
+                  priority
+                />
               </div>
 
               <div className="space-y-3 font-mono text-xs tracking-wider">

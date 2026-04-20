@@ -9,6 +9,7 @@ export const profile = {
   email: "kwakjoonhyung0429@gmail.com",
   phone: "+82-10-6591-8491",
   github: "https://github.com/kwakjoonhyung",
+  linkedin: "https://www.linkedin.com/in/joonhyung-kwak-a33772254/",
   university: "Sungkyunkwan University",
   lab: "Human-Language Intelligence Lab",
   advisor: "Prof. JinYeong Bak",
