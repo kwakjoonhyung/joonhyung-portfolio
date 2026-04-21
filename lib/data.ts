@@ -281,7 +281,7 @@ export const projects = [
     highlight: "Multi-sensor streams from 5 instrumented households",
     star: {
       situation:
-        "During my exchange semester at Deggendorf, I joined a DeinHaus 4.0 industry collaboration tasked with building a ventilation-control AI for aging-in-place smart homes from multi-sensor logs across 5 households. My initial air-quality-prediction approach triggered ventilation from sensor values alone, but the data couldn't capture the rapid environmental shifts or resident discomfort that actually governed when ventilation should happen.",
+        "The DeinHaus 4.0 industry-linked project required a ventilation-control AI for aging-in-place smart homes, built on multi-sensor logs from 5 instrumented households. Sensor-only air-quality baselines failed to capture the rapid environmental shifts and resident discomfort that actually determined when ventilation should be triggered.",
       task: "Analyze multi-sensor ventilation and activity streams from 5 instrumented households to support automated control and anomaly flagging for elderly residents.",
       action: [
         "Analyzed multi-sensor ventilation and activity streams from **5 instrumented aging-in-place households**.",
