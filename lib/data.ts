@@ -4,7 +4,7 @@ export const profile = {
   title: "AI Researcher",
   subtitle: "LLM Inference · Causal Reasoning · Mental-Health NLP",
   tagline:
-    "Taking research prototypes to production — from LLM serving pipelines to statistically rigorous evaluation systems.",
+    "Taking research prototypes to production, from LLM serving pipelines to statistically rigorous evaluation systems.",
   location: "Suwon, Republic of Korea",
   email: "kwakjoonhyung0429@gmail.com",
   phone: "+82-10-6591-8491",
@@ -19,7 +19,7 @@ export const profile = {
 export const about = {
   paragraphs: [
     "M.S. candidate in Artificial Intelligence at Sungkyunkwan University, working under Prof. JinYeong Bak at the Human-Language Intelligence Lab. My research lies at the intersection of **LLM inference optimization** and **causal reasoning systems for mental-health applications**.",
-    "I care about making research *actually run*. Scaling vLLM pipelines across 8K-user corpora, designing statistically-grounded LLM-as-a-Judge evaluation, and shipping end-to-end crawling-to-insight systems consumed by industry teams — these are the places where a paper meets a production constraint.",
+    "I care about making research *actually run*. Scaling vLLM pipelines across 8K-user corpora, designing statistically-grounded LLM-as-a-Judge evaluation, and shipping end-to-end crawling-to-insight systems consumed by industry teams are the places where a paper meets a production constraint.",
     "Currently writing my thesis on constructing temporal causal symptom graphs from SNS posts using LLMs. Graduating August 2026.",
   ],
   highlights: [
@@ -27,7 +27,7 @@ export const about = {
       icon: "🧠",
       title: "Causal NLP Research",
       description:
-        "Building temporal causal graphs from sparse user timelines using LLMs — 80% coverage improvement over legacy causal-matrix methods.",
+        "Building temporal causal graphs from sparse user timelines using LLMs, with 80% coverage improvement over legacy causal-matrix methods.",
     },
     {
       icon: "⚡",
@@ -39,7 +39,7 @@ export const about = {
       icon: "📊",
       title: "Rigorous Evaluation",
       description:
-        "LLM-as-a-Judge framework benchmarking causal prompts across 4 backbones (GPT-4o, Qwen3, Llama3, Gemma) — bootstrapped ATE with confidence intervals, not single-point F1.",
+        "LLM-as-a-Judge framework where GPT-4o judged causal explanations from our TCPE prompt against a base-prompt baseline across 4 LLM backbones (GPT-4o, Qwen3, Llama3, Gemma). TCPE was preferred across every backbone.",
     },
     {
       icon: "🔬",
@@ -95,7 +95,7 @@ export const timeline = [
         title: "Research Assistant",
         org: "Nursing Informatics Lab, Inha University",
         description:
-          "Clinical keyword trends from 5K EMR notes — published as a book chapter in *Health Informatics* (4th ed.). Fine-tuned domain-specific BERT for medical NER (F1 82.8, 23 entity types) and deployed the model at Ilsan Hospital.",
+          "Clinical keyword trends from 5 years of Nursing Informatics papers. Fine-tuned domain-specific BERT for medical NER (F1 82.8, 23 entity types) from 5K EMR notes and deployed the model at Ilsan Hospital.",
         tag: "Clinical NLP",
       },
     ],
@@ -141,18 +141,18 @@ export const projects = [
     highlight: "6× inference throughput · 80% coverage improvement",
     star: {
       situation:
-        "Existing causal-matrix approaches for modeling mental-health symptom progression failed on sparse user timelines in SNS data — the legacy pipeline couldn't construct meaningful graphs when post frequency varied heavily across users, and LLM-based extraction at scale was prohibitively slow (9h on 2×A6000 for an 8K-user corpus).",
-      task: "Design a production-grade pipeline that (1) constructs temporal causal graphs from 230K+ SNS posts despite temporal sparsity, (2) scales LLM inference to complete in hours rather than days, and (3) evaluates graph quality with statistically meaningful confidence — not just point estimates.",
+        "Existing causal-matrix approaches for modeling mental-health symptom progression failed on sparse user timelines in SNS data. The legacy pipeline couldn't construct meaningful graphs when post frequency varied heavily across users, and LLM-based extraction at scale was prohibitively slow (9h on 2×A6000 for an 8K-user corpus).",
+      task: "Design a production-grade pipeline that (1) constructs temporal causal graphs from 230K+ SNS posts despite temporal sparsity, (2) scales LLM inference to complete in hours rather than days, and (3) evaluates graph quality with statistically meaningful rigor rather than single-point estimates.",
       action: [
         "Designed a **day-level clustering preprocessing pipeline** to consolidate sparse posts into temporally coherent units before causal extraction, replacing the matrix-based legacy approach.",
         "Re-engineered the LLM inference layer with **vLLM (PagedAttention + continuous batching)**, optimizing KV-cache reuse patterns specific to the causal-extraction prompt structure.",
-        "Built an **LLM-as-a-Judge evaluation framework** with bootstrapped ATE (10k resamples, 95% CIs) so graph variants could be compared with confidence intervals instead of single-point F1 numbers.",
+        "Built an **LLM-as-a-Judge pairwise evaluation framework** where GPT-4o judged whether causal explanations from our TCPE-enhanced prompt or a base-prompt baseline better demonstrated clinical reasoning, across four LLM backbones (GPT-4o, Qwen3-8B, Llama3-8B, Gemma-7B). TCPE explanations were preferred on every backbone.",
         "Trained multi-label symptom classifiers with **PyTorch Lightning DDP** on 2 GPUs for downstream validation.",
       ],
       result: [
         "**80% coverage improvement** on sparse user timelines vs. legacy causal-matrix baseline.",
-        "**6× LLM inference throughput** — end-to-end labeling reduced from 9h to 1.5h on 2×A6000.",
-        "**0.78 macro-F1 on PsySym dataset** — an 8-point gain over few-shot GPT-4o baselines.",
+        "**6× LLM inference throughput** reduced end-to-end labeling from 9h to 1.5h on 2×A6000.",
+        "**0.78 macro-F1 on PsySym dataset**, an 8-point gain over few-shot GPT-4o baselines.",
         "Work forms the basis of my M.S. thesis (expected Aug. 2026).",
       ],
     },
@@ -166,7 +166,7 @@ export const projects = [
     highlight: "End-to-end CN→EN sentiment system consumed by HF analysts",
     star: {
       situation:
-        "A hedge fund's alt-data team needed structured sentiment signals from Xueqiu — China's largest social investing platform — but the site uses dynamic rendering, infinite scroll, and aggressive anti-bot detection. No turnkey solution existed to turn raw Chinese posts into analyst-ready English reports.",
+        "A hedge fund's alt-data team needed structured sentiment signals from Xueqiu, China's largest social investing platform. However, the site uses dynamic rendering, infinite scroll, and aggressive anti-bot detection, and no turnkey solution existed to turn raw Chinese posts into analyst-ready English reports.",
       task: "Build a complete data-to-insight pipeline: crawl 7 market tabs on Xueqiu, handle anti-bot and dynamic rendering robustly, translate and classify sentiment on Chinese posts, and deliver outputs in a format a hedge-fund analyst would actually read.",
       action: [
         "Built a fully **async Playwright crawler** with `asyncio` for concurrent tab handling, scroll-triggered loading, and retry/backoff logic against anti-bot countermeasures.",
@@ -176,8 +176,8 @@ export const projects = [
       ],
       result: [
         "**700 posts collected** across 7 Xueqiu market tabs in a single run, with robust handling of dynamic rendering.",
+        "**Domain-specific prompts** consolidated CN→EN translation and sentiment classification into a single Fireworks AI (Llama-3) pass, cutting API round-trips while preserving the investor-context terminology that generic translation prompts tend to miss.",
         "Reports delivered in a format **directly consumed by the hedge fund's investment team**.",
-        "Full pipeline open-sourced — serves as a reference implementation for similar alt-data work.",
       ],
     },
   },
@@ -198,9 +198,9 @@ export const projects = [
         "Built a **GPT-4o structured-output pipeline** with a hierarchical 6-category taxonomy co-developed with clinicians, so outputs map cleanly onto clinical constructs rather than engineer-invented labels.",
       ],
       result: [
-        "**3K clinically-grounded SNS posts** collected with IRB approval — a rare asset in this space.",
+        "Collected **3K clinically-grounded SNS posts** under IRB approval, a rare asset in this research space.",
         "Hierarchical taxonomy enables **clinically actionable** model outputs rather than opaque binary scores.",
-        "Ongoing research — dataset and pipeline feed into lab's broader mental-health NLP program.",
+        "GPT-4o structured-output pipeline produced **clinically-grounded 6-category labels** on the full 3K-post corpus, replacing proxy labels (subreddit membership, keyword heuristics) that prior detection work depended on.",
       ],
     },
   },
@@ -214,7 +214,7 @@ export const projects = [
     star: {
       situation:
         "Raw ECG and ABP waveforms from 1,500 patient records are noisy: baseline wander, motion artifacts, inconsistent sampling. A downstream stroke-risk model built directly on raw signal would learn noise, not physiology. Separately, the team wanted to explore whether a small LLM (Phi-2 2.7B) could be specialized for clinical QA on commodity hardware.",
-      task: "(1) Build a robust waveform preprocessing pipeline suitable for downstream modeling, (2) train a multi-modal stroke-risk predictor fusing waveforms with demographics, and (3) prototype a QLoRA-fine-tuned Phi-2 as a clinical-QA demo.",
+      task: "(1) Build a robust waveform preprocessing pipeline suitable for downstream modeling, (2) train a stroke-risk predictor fusing waveforms with demographics, and (3) prototype a QLoRA-fine-tuned Phi-2 as a clinical-QA demo.",
       action: [
         "Built an **ECG/ABP preprocessing pipeline**: Pan-Tompkins QRS detection, cubic-spline baseline-wander removal using R-peak-anchored knots, resampling to 100 Hz with per-beat normalization to 128 samples.",
         "Added **quality-filtering rules** that rejected 10% of noisy segments before model training.",
@@ -237,7 +237,7 @@ export const projects = [
     highlight: "Token-level streaming across OpenAI + Gemini agents",
     star: {
       situation:
-        "Multi-agent LLM systems are usually demoed as turn-based batch output. A real-time debate between heterogeneous agents (OpenAI + Gemini) with token-level streaming surfaces concurrency problems that turn-based demos hide — most notably, agents talking over each other and deadlocking waiting on each other's turn signals.",
+        "Multi-agent LLM systems are usually demoed as turn-based batch output. A real-time debate between heterogeneous agents (OpenAI + Gemini) with token-level streaming surfaces concurrency problems that turn-based demos hide. In particular, agents talk over each other and deadlock while waiting on each other's turn signals.",
       task: "Build a backend that streams LLM-to-LLM debate turns over WebSocket, coordinating agents with different APIs and latencies without interleaving their tokens or deadlocking.",
       action: [
         "Architected a **real-time multi-agent orchestration backend** streaming debate turns over WebSocket.",
@@ -246,7 +246,7 @@ export const projects = [
       ],
       result: [
         "Stable concurrent token-level streaming across heterogeneous LLM providers.",
-        "Deadlock-free turn arbitration — a nontrivial problem in multi-agent streaming systems.",
+        "Deadlock-free turn arbitration, solving a nontrivial concurrency problem in multi-agent streaming systems.",
       ],
     },
   },
@@ -281,7 +281,7 @@ export const projects = [
     highlight: "Multi-sensor streams from 5 instrumented households",
     star: {
       situation:
-        "Aging-in-place households generate continuous multi-sensor streams (ventilation, activity), but raw data alone doesn't tell caregivers when something is actually wrong. The challenge is distinguishing anomalies that matter from normal variation.",
+        "During my exchange semester at Deggendorf, I joined a DeinHaus 4.0 industry collaboration tasked with building a ventilation-control AI for aging-in-place smart homes from multi-sensor logs across 5 households. My initial air-quality-prediction approach triggered ventilation from sensor values alone, but the data couldn't capture the rapid environmental shifts or resident discomfort that actually governed when ventilation should happen.",
       task: "Analyze multi-sensor ventilation and activity streams from 5 instrumented households to support automated control and anomaly flagging for elderly residents.",
       action: [
         "Analyzed multi-sensor ventilation and activity streams from **5 instrumented aging-in-place households**.",
@@ -401,6 +401,6 @@ export const awards = [
   {
     year: "2021",
     title: "Han-eum ICT Contest Award",
-    org: "—",
+    org: "The Federation of Korean Information Industries",
   },
 ];
