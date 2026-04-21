@@ -1,9 +1,9 @@
 "use client";
 
-import { skills, teaching, awards } from "@/lib/data";
+import { skills, teaching, awards, certifications, languages } from "@/lib/data";
 import { motion } from "framer-motion";
 import SectionHeader from "./SectionHeader";
-import { Award, GraduationCap } from "lucide-react";
+import { Award, GraduationCap, BadgeCheck, Languages as LanguagesIcon } from "lucide-react";
 
 export default function Skills() {
   return (
@@ -101,12 +101,69 @@ export default function Skills() {
                   )}
                 </div>
               ))}
-              {/*
-                💡 NOTE: If you have more awards or scholarships,
-                add them in /lib/data.ts — the `awards` array.
-                Certificates (e.g., TOEIC, TOPIK) could also live here
-                if you want a formal-credentials track.
-              */}
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Certifications + Languages — two columns */}
+        <div className="grid md:grid-cols-2 gap-10 mt-10">
+          {/* Certifications */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <BadgeCheck size={20} className="text-accent" />
+              <h3 className="font-display text-2xl tracking-tight">
+                Certifications
+              </h3>
+            </div>
+            <div className="space-y-3">
+              {certifications.map((c, i) => (
+                <div
+                  key={i}
+                  className="p-5 border border-line rounded-lg hover:border-accent/40 transition-colors"
+                >
+                  <div className="font-mono text-[10px] tracking-widest uppercase text-accent mb-1">
+                    {c.date}
+                  </div>
+                  <div className="font-medium text-ink">{c.name}</div>
+                  <div className="text-sm text-muted mt-1">{c.issuer}</div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Languages */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <LanguagesIcon size={20} className="text-accent" />
+              <h3 className="font-display text-2xl tracking-tight">
+                Languages
+              </h3>
+            </div>
+            <div className="space-y-3">
+              {languages.map((l, i) => (
+                <div
+                  key={i}
+                  className="p-5 border border-line rounded-lg hover:border-accent/40 transition-colors"
+                >
+                  <div className="font-mono text-[10px] tracking-widest uppercase text-accent mb-1">
+                    {l.level}
+                  </div>
+                  <div className="font-medium text-ink">{l.name}</div>
+                  {l.detail && (
+                    <div className="text-sm text-muted mt-1">{l.detail}</div>
+                  )}
+                </div>
+              ))}
             </div>
           </motion.div>
         </div>

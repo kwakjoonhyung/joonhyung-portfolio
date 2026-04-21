@@ -361,13 +361,42 @@ export const skills = [
     ],
   },
   {
-    category: "Languages",
+    category: "Programming Languages",
     items: [
       "Python (advanced)",
       "C / C++",
-      "Korean (native)",
-      "English (fluent)",
     ],
+  },
+];
+
+export const certifications = [
+  {
+    name: "Microsoft Certified: Azure AI Fundamentals",
+    issuer: "Microsoft",
+    date: "Dec. 2023",
+  },
+  {
+    name: "Palantir Foundry Foundations",
+    issuer: "Palantir Technologies",
+    date: "May 2025",
+  },
+  {
+    name: "Driver's License (Type 1 Ordinary)",
+    issuer: "Gyeonggi Nambu Provincial Police Agency",
+    date: "Dec. 2021",
+  },
+];
+
+export const languages = [
+  {
+    name: "Korean",
+    level: "Native",
+    detail: null,
+  },
+  {
+    name: "English",
+    level: "Fluent",
+    detail: "OPIc Intermediate High · Aug. 2025",
   },
 ];
 
