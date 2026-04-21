@@ -3,6 +3,21 @@
 import { timeline } from "@/lib/data";
 import { motion } from "framer-motion";
 import SectionHeader from "./SectionHeader";
+import { FileText } from "lucide-react";
+
+// Minimal italic renderer for *emphasis* spans inside plain description strings.
+function renderItalics(text: string) {
+  const parts = text.split(/(\*[^*]+\*)/g);
+  return parts.map((p, i) =>
+    p.startsWith("*") && p.endsWith("*") && p.length > 1 ? (
+      <em key={i} className="italic text-ink/80">
+        {p.slice(1, -1)}
+      </em>
+    ) : (
+      <span key={i}>{p}</span>
+    )
+  );
+}
 
 export default function Timeline() {
   return (
@@ -14,7 +29,7 @@ export default function Timeline() {
         <SectionHeader
           number="02"
           title="Career"
-          subtitle="From ICE signal preprocessing at a hospital lab to LLM serving at scale — the throughline is making research systems actually ship."
+          subtitle="From medical NER in a nursing lab and ECG pipelines at a hospital to LLM inference and causal reasoning at lab scale — five years of turning research prototypes into systems that ship."
         />
 
         <div className="relative">
@@ -68,8 +83,21 @@ export default function Timeline() {
                           {item.org}
                         </div>
                         <p className="text-sm text-muted leading-relaxed text-pretty">
-                          {item.description}
+                          {renderItalics(item.description)}
                         </p>
+                        {"thesisUrl" in item && item.thesisUrl ? (
+                          <a
+                            href={item.thesisUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-4 inline-flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-accent hover:underline"
+                          >
+                            <FileText size={14} />
+                            {"thesisLabel" in item && item.thesisLabel
+                              ? item.thesisLabel
+                              : "Thesis (PDF) ↗"}
+                          </a>
+                        ) : null}
                       </div>
                     ))}
                   </div>

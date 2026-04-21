@@ -44,6 +44,19 @@ export default function Publications() {
                   <span className="text-accent">{pub.venue}</span>
                   <span className="text-muted">·</span>
                   <span className="text-muted">{pub.type}</span>
+                  {"pdfUrl" in pub && pub.pdfUrl ? (
+                    <>
+                      <span className="text-muted">·</span>
+                      <a
+                        href={pub.pdfUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-accent hover:underline font-mono text-xs tracking-widest uppercase"
+                      >
+                        PDF ↗
+                      </a>
+                    </>
+                  ) : null}
                 </div>
               </div>
             </motion.div>

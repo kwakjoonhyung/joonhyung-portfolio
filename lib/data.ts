@@ -39,7 +39,7 @@ export const about = {
       icon: "📊",
       title: "Rigorous Evaluation",
       description:
-        "LLM-as-a-Judge frameworks and bootstrapped ATE with 95% CIs (10k resamples)",
+        "LLM-as-a-Judge framework benchmarking causal prompts across 4 backbones (GPT-4o, Qwen3, Llama3, Gemma) — bootstrapped ATE with confidence intervals, not single-point F1.",
     },
     {
       icon: "🔬",
@@ -61,6 +61,8 @@ export const timeline = [
         description:
           "M.S. in Artificial Intelligence. Advisor: Prof. JinYeong Bak. Thesis on temporal causal symptom graphs using LLMs.",
         tag: "Research",
+        thesisUrl: "/thesis/ms_thesis.pdf",
+        thesisLabel: "M.S. Thesis (draft) ↗",
       },
     ],
   },
@@ -85,7 +87,7 @@ export const timeline = [
         title: "Undergraduate Researcher",
         org: "Data Intelligence Lab, Inha University",
         description:
-          "Reduced Korean ASR WER from 12.2% to 8.3% via text-normalization pipeline. Custom Transformer variants for solar-power forecasting.",
+          "Reduced Korean ASR WER from 12.2% to 8.3% via text-normalization pipeline. Custom Transformer variants for solar-power forecasting (+7% MAPE over vanilla baseline).",
         tag: "Research",
       },
       {
@@ -93,7 +95,7 @@ export const timeline = [
         title: "Research Assistant",
         org: "Nursing Informatics Lab, Inha University",
         description:
-          "Clinical keyword trends from 5K EMR notes. Fine-tuned domain-specific BERT for medical NER (F1 82.8, 23 entity types).",
+          "Clinical keyword trends from 5K EMR notes — published as a book chapter in *Health Informatics* (4th ed.). Fine-tuned domain-specific BERT for medical NER (F1 82.8, 23 entity types) and deployed the model at Ilsan Hospital.",
         tag: "Clinical NLP",
       },
     ],
@@ -119,8 +121,10 @@ export const timeline = [
         title: "B.S. in Information and Communication Engineering",
         org: "Inha University",
         description:
-          "Bachelor's degree with undergraduate thesis on audio emotion classification with dynamic attention windows — published at KCC 2023.",
+          "Bachelor's degree with undergraduate thesis on audio emotion classification with dynamic attention windows.",
         tag: "Education",
+        thesisUrl: "/thesis/bs_thesis.pdf",
+        thesisLabel: "B.S. Thesis (PDF) ↗",
       },
     ],
   },
@@ -201,28 +205,6 @@ export const projects = [
     },
   },
   {
-    id: "military-mental-health",
-    year: "Jun. 2024 – Jul. 2025",
-    title: "Mental Health Screening from Military App Logs",
-    subtitle: "Sub-project — Human-Language Intelligence Lab, SKKU",
-    tags: ["Sequence Modeling", "Low-Resource NLP", "Clinical"],
-    highlight: "Encoder model +9 F1 over few-shot Solar baseline",
-    star: {
-      situation:
-        "Screening for mental-health risk among active-duty soldiers is a high-stakes, low-resource problem. Available data: longitudinal diary-app logs from 214 soldiers over 2 months. Conventional wisdom was to use few-shot LLMs (Solar) — but LLM prompt-only approaches ignore the structured *behavioral sequence* inside app logs.",
-      task: "Determine whether structured behavioral signals from diary-app sequences can outperform prompt-only LLMs on this low-resource clinical screening task.",
-      action: [
-        "Processed **longitudinal diary-app logs from 214 active-duty soldiers over 2 months**, handling sparsity and irregular entry cadence.",
-        "Designed an **encoder-based sequence model** that consumed behavioral sequences end-to-end rather than flattening them into prompts.",
-        "Benchmarked head-to-head against **few-shot Solar** on identical splits.",
-      ],
-      result: [
-        "**+9 F1 points** over few-shot Solar baseline.",
-        "Demonstrated that **structured behavioral signals beat prompt-only LLMs** in low-resource clinical settings — a nontrivial finding for a field that defaults to 'just use GPT'.",
-      ],
-    },
-  },
-  {
     id: "ecg-stroke",
     year: "Sep. 2024 – Oct. 2024",
     title: "ECG/ABP Waveform Pipeline for Stroke Risk Prediction",
@@ -235,13 +217,13 @@ export const projects = [
       task: "(1) Build a robust waveform preprocessing pipeline suitable for downstream modeling, (2) train a multi-modal stroke-risk predictor fusing waveforms with demographics, and (3) prototype a QLoRA-fine-tuned Phi-2 as a clinical-QA demo.",
       action: [
         "Built an **ECG/ABP preprocessing pipeline**: Pan-Tompkins QRS detection, cubic-spline baseline-wander removal using R-peak-anchored knots, resampling to 100 Hz with per-beat normalization to 128 samples.",
-        "Added **quality-filtering rules** that rejected 30% of noisy segments before model training.",
+        "Added **quality-filtering rules** that rejected 10% of noisy segments before model training.",
         "Developed a **multi-input 1D Inception-CNN in PyTorch**, fusing waveform features with patient demographics via late concatenation.",
         "Fine-tuned **Phi-2 (2.7B)** on the Asclepius clinical-notes dataset using **4-bit NF4 QLoRA**, deploying a Gradio-based A/B comparison demo against vanilla Phi-2.",
       ],
       result: [
         "**ROC-AUC 0.81** on stroke risk prediction with the multi-input Inception-CNN.",
-        "**30% noise rejection rate** improved downstream training signal-to-noise.",
+        "**10% noise rejection rate** improved downstream training signal-to-noise.",
         "Working Phi-2 QLoRA demo deployed for team to qualitatively evaluate clinical-QA specialization on a 2.7B model.",
       ],
     },
@@ -316,10 +298,19 @@ export const publications = [
   {
     authors: "J. Kwak et al.",
     title:
+      "From Post to Temporal Causality: Constructing Symptom Temporal Causal Graphs using Large Language Models",
+    venue: "In Preparation for Submission",
+    type: "Manuscript",
+    year: 2026,
+  },
+  {
+    authors: "J. Kwak et al.",
+    title:
       "Dataset refining techniques for improving training efficiency of voice-based situation classification models",
     venue: "Korea Computer Congress (KCC)",
     type: "Poster",
     year: 2023,
+    pdfUrl: "/publications/kcc_2023.pdf",
   },
 ];
 
